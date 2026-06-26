@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Brand palette (from Rideworks brand notes) */
+  --color-ink: #000000;
+  --color-charcoal: #191919;
+  --color-bronze: #b58440;
+  --color-bronze-dark: #9d6f31;
+  --color-bronze-light: #c9a463;
+  --color-paper: #f7f4ef;
+  --color-sand: #e8e1d6;
+  --color-muted: #6f6f6f;
+  --color-line: #d8d3cb;
+  --color-bmw: #0066b1;
+  --color-triumph: #d6a21e;
+
+  /* Type */
+  --font-display: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  /* Easing */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-paper);
+    color: var(--color-charcoal);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-bronze);
+    color: #fff;
+  }
+
+  /* Focus visibility for keyboard users */
+  :focus-visible {
+    outline: 2px solid var(--color-bronze);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
