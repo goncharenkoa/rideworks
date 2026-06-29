@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PROMISE } from '../data';
+import logoSrc from '../assets/logo.svg';
 
 const footerLinks = [
   { label: 'Home', to: '/' },
@@ -17,8 +18,8 @@ export function Footer() {
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-20">
         <div className="grid md:grid-cols-[1.4fr_1fr_1fr] gap-12">
           <div>
-            <Link to="/" className="font-display font-bold text-2xl tracking-tight">
-              RIDE<span className="text-bronze">WORKS</span>
+            <Link to="/" aria-label="Rideworks home">
+              <img src={logoSrc} alt="Rideworks" className="h-9 w-auto brightness-0 invert" />
             </Link>
             <p className="mt-5 text-base text-white/70 max-w-sm leading-relaxed">
               Rideworks provides premium motorcycle and motorbike hire for experienced riders

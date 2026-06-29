@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { NAV_LINKS } from '../data';
+import logoSrc from '../assets/logo.svg';
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -24,8 +25,8 @@ export function Nav() {
       }`}
     >
       <nav className="max-w-[1400px] mx-auto px-5 md:px-10 h-[72px] flex items-center justify-between">
-        <Link to="/" className="font-display font-bold text-xl tracking-tight text-charcoal">
-          RIDE<span className="text-bronze">WORKS</span>
+        <Link to="/" aria-label="Rideworks home">
+          <img src={logoSrc} alt="Rideworks" height={36} className="h-9 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-9">
